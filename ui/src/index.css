@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --check-background: #1e9cea;
+  --check-color: white;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+input[type="checkbox"] {
+  /* Remove checkbox basic styles */
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+
+  /* Rest of CSS */
+  color: var(--check-background);
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid;
+  border-radius: 5px;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  box-shadow: inset 1em 1em var(--check-color);
+}
+
+input[type="checkbox"]:checked {
+  background: var(--check-background);
+}
